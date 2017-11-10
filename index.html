@@ -4,19 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Chart.j Example</title>
-  <script type="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>My Chart.js Chart</title>
 </head>
 <body>
  <div class="container">
    <canvas id="myChart"></canvas>
+</div>
 
- </div>
  <script>
 
  let myChart = document.getElementById('myChart').getContext('2d');
 
- </script>
+ // Global Options
+
+
+ let massPopChart = new Chart(myChart, {
+   type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+   data:{
+     labels:['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford'],
+     datasets:[{
+       label:'Population',
+       data:[
+         617594,
+         181045,
+         153060,
+         106519,
+         105162,
+         95072
+       ]
+
+     }]
+   },
+   options:{}
+ });
+</script>
 </body>
 </html>
